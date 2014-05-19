@@ -15,7 +15,7 @@ class Box < ActiveRecord::Base
     if items_list.present?
       self.items = []
       items_list.split(',').each do |item|
-        self.items << Item.where(name: item).first_or_create
+        self.items << Item.where(name: item.squish).first_or_create
       end
     end
   end
