@@ -3,8 +3,10 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Destination</th>
       <th>Weight</th>
+      <th>Items</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,8 +14,10 @@
   <tbody>
     <% @boxes.each do |box| %>
       <tr>
+        <td><%= box.id %></td>
         <td><%= box.destination %></td>
         <td><%= box.weight %></td>
+        <td><%= box.items.map(&:name).join(", ") %></td>
         <td><%= link_to 'Show', box %></td>
         <td><%= link_to 'Edit', edit_box_path(box) %></td>
         <td><%= link_to 'Destroy', box, method: :delete, data: { confirm: 'Are you sure?' } %></td>
