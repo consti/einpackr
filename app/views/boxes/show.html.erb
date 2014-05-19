@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<div class='page-header'>
+  <h1>This is box <%= @box.id %></h1>
+</div>
 
 <p>
   <strong>Destination:</strong>
@@ -7,7 +9,7 @@
 
 <p>
   <strong>Weight:</strong>
-  <%= @box.weight %>
+  <%= @box.weight %> kg
 </p>
 
 <p>
@@ -20,5 +22,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_box_path(@box) %> |
-<%= link_to 'Back', boxes_path %>
+<div class='btn-group'>
+  <%= link_to 'Edit', edit_box_path(@box), class: 'btn btn-sm btn-default' %>
+  <%= link_to 'Back', boxes_path, class: 'btn btn-sm btn-default' %>
+</div>
